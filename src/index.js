@@ -1,16 +1,17 @@
 import 'Styles/main.scss';
 import Vue from 'vue';
-import HelloWorld from 'Components/HelloWorld.vue';
+import App from "./App.vue"
 
 import Vuex from 'vuex'
 import store from "./store"
 
+import router from "./router"
+
 Vue.use(Vuex)
 
-const App = {
-  render: createElement => createElement(HelloWorld),
+new Vue({
+  render: createElement => createElement(App),
   store: new Vuex.Store(store),
+  router,
   el: '#app'
-}
-
-new Vue(App);
+});

@@ -1,5 +1,5 @@
 
-import moduleCompany from '@/store/modules/company'
+import moduleCompany from 'Store/modules/company'
 
 export default {
     modules: {
