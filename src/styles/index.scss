@@ -2,17 +2,3 @@ html {
     background-color: $ui-gray-lighter;
     overflow-y: scroll;
 }
-
-.section {
-    padding: 80px $padding-container 0 $padding-container;
-}
-
-.section-menu {
-    padding: 0px $padding-container 0 $padding-container;
-}
-
-@media screen and (max-width: $break-xs) {
-    .mobile-hidden {
-        display: none;
-    }
-}

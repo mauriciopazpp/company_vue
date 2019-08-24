@@ -17,5 +17,7 @@
 </script>
 
 <style lang="scss" scoped>
-   /**/
+   .menu {
+       background: $ui-warning;
+   }
 </style>

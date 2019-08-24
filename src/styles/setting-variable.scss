@@ -1,6 +1,4 @@
 /* Pallet Colors */
-$ui-blue-base: #016aa3;
-$ui-blue-second: #7090b7;
 $ui-gray-lighter: #f3f3f4;
 $ui-gray-dark: #a8a8a8;
 $ui-gray-darkness: #666666;
@@ -14,16 +12,11 @@ $ui-font-level2-title: 4em;
 $ui-font-level3-title: 1.7em;
 $ui-font-normal-size: 1em;
 
-$ui-font-family-main: "Montserrat", "Helvetica Neue", sans-serif;
-
 $padding-global: 30px;
-
-/* Responsive */
-$break-xs: 375px;
-$break-sm: 480px;
-$break-md: 768px;
-$break-lg: 992px;
-$break-xl: 1200px;
 
 /* Padding container */
 $padding-container: 200px;
+
+$menu-width-desktop: 240px;
+$menu-width-tablet: 90px;
+$menu-width-smartphone: 230px;
