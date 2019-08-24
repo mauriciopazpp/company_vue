@@ -17,7 +17,9 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "Styles/setting-variable";
+
    .menu {
-       background: $ui-warning;
+       background: $ui-gray-lighter;
    }
 </style>

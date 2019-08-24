@@ -1,4 +1,9 @@
-/* Pallet Colors */
+/* Primary colors */
+$main-color-purple: #384783;
+$main-color-purple2: #1e2b59;
+$main-color-purple3: #5c699a;
+
+/* Global Pallet Colors */
 $ui-gray-lighter: #f3f3f4;
 $ui-gray-dark: #a8a8a8;
 $ui-gray-darkness: #666666;
@@ -12,11 +17,5 @@ $ui-font-level2-title: 4em;
 $ui-font-level3-title: 1.7em;
 $ui-font-normal-size: 1em;
 
-$padding-global: 30px;
-
-/* Padding container */
-$padding-container: 200px;
-
-$menu-width-desktop: 240px;
-$menu-width-tablet: 90px;
-$menu-width-smartphone: 230px;
+$size-global: 20px;
+$border-global: 5px;
