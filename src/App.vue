@@ -1,8 +1,11 @@
 <template lang="pug">
     .app
         Header
-        Menu
-        Content
+        .container
+            .section
+                Menu
+            .section
+                Content
         Footer
 </template>
 
@@ -23,5 +26,11 @@
 </script>
 
 <style lang="scss" scoped>
-    /*style app*/
+    @import "Styles/setting-variable";
+
+    .container {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        padding: ($size-global*2) ($size-global*5);
+    }
 </style>

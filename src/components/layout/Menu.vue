@@ -1,25 +1,34 @@
 <template lang="pug">
-    nav.menu
-        .menu-trigger
-        header.avatar
-            img(src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg")
-            h2 Mauricio Paz Pacheco ;D
-        ul
-            li
-                span Company Page
-
+    div.menu-li
+        router-link.menu-a(to='/')
+            div COMPANY DATA
+        router-link.menu-a(to='/')
+            div COMPANY TABLE
+        router-link.menu-a(to='/')
+            div COMPANY PAGE
 </template>
 
 <script>
-    export default {
-
-    }
+    /** */
 </script>
 
 <style lang="scss" scoped>
     @import "Styles/setting-variable";
 
-   .menu {
-       background: $ui-gray-lighter;
-   }
+    .menu-a {
+        display: block;
+        padding: $size-global;
+        border-left: 1px solid $ui-gray-dark;
+        border-right: 1px solid $ui-gray-dark;
+
+        &:first-child {
+            border: 1px solid $ui-gray-dark;
+            border-radius: $border-global $border-global 0 0;
+        }
+
+        &:last-child {
+            border: 1px solid $ui-gray-dark;
+            border-radius: 0 0 $border-global $border-global;
+        }
+    }
 </style>
