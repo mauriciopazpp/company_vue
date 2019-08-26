@@ -48,7 +48,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .collection-button {
     display: inline-block;
     vertical-align: middle;

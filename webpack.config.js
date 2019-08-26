@@ -48,7 +48,7 @@ module.exports = {
         exclude: /node_modules/,
         options: {
           fix: false,
-          failOnWarning: true
+          failOnWarning: false
         }
       },
       {

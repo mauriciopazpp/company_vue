@@ -1,11 +1,8 @@
 <template lang="pug">
     div.menu-li
-        router-link.menu-a(to='/')
-            div COMPANY DATA
-        router-link.menu-a(to='/')
-            div COMPANY TABLE
-        router-link.menu-a(to='/')
-            div COMPANY PAGE
+        div.menu-a(v-for="route in $router.options.routes")
+            router-link(:to="route.path", key='data') 
+                | {{ route.name }}
 </template>
 
 <script>

@@ -1,5 +1,6 @@
 <template lang="pug">
     section.company
+        | Company page
 </template>
 
 <script>
