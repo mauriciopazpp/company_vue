@@ -1,6 +1,5 @@
 <template lang="pug">
     button.collection-button(
-        v-else,
         v-on:click='action')
         slot
         | {{ label }}
