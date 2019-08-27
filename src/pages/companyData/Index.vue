@@ -2,38 +2,61 @@
     section.company-data
         | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam faucibus, 
         | lectus in pulvinar consectetur.
+        p(v-if="errors.length")
+            ul
+                li.company-messages(v-for="error in errors") {{ error }}
         .company-form
-            Input(name='name', label='COMPANY NAME', placeholder='e.g. Your Company Name')
-            Input(name='spend', label='COMPANY SPEND', placeholder='e.g. $150,00')
-            Input(name='spend_ability', label='COMPANY SPEND ABILITY', placeholder='e.g. $150,00 - $330,00')
+            .company-form-label
+                label COMPANY NAME
+            input.company-form-input(ref='name', name='name', placeholder='e.g. Your Company Name', v-on:blur='checkName')
+            .company-form-label
+                label COMPANY SPEND
+            input.company-form-input(ref='spend', name='spend', placeholder='e.g. $150,00', , v-on:blur='checkSpend')
+            .company-form-label
+                label COMPANY SPEND ABILITY
+            input.company-form-input(name='spendAbility', placeholder='e.g. $150,00 - $330,00')
             .company-notes(v-on:click='() => toggleModal()', title='Click to insert a note')
-                Textarea(name='notes', label='NOTES', placeholder='e.g. Good Tech Company')
-            Modal.company-modal(v-if='showModal', close='showModal = false')
+                .company-notes-label
+                    label Notes
+                textarea(ref='notes', name='notes', label='NOTES', placeholder='e.g. Good Tech Company', v-model="notes")
+            Modal.company-modal(v-if='showModal', close='.')
                 .company-header(slot='header') ADDITIONAL NOTES
                 .company-body(slot='body')
-                    Textarea(name='notes', label='NOTES', placeholder='e.g. Good Tech Company')
+                    textarea(ref='notes1',  name='notesModal', placeholder='e.g. Good Tech Company',  v-model="notes")
                 .company-footer(slot='footer')
                     Button.company-footer-button(label='Close', :action='() => toggleModal()')
-
 </template>
 
 <script>
-    import Input from 'Components/Input.vue'
-    import Textarea from 'Components/Textarea.vue'
     import Modal from 'Components/Modal.vue'
     import Button from 'Components/Button.vue'
 
     export default {
         data: () => ({
-            showModal: false
+            errors: [],
+            showModal: false,
+            notes: ''
         }),
         components: {
-            Input,
-            Textarea,
             Modal,
             Button
         },
         methods: {
+            checkName: function () {
+                this.errors = []
+                
+                if (!this.$refs.name.value) {
+                    this.errors.push('Name can not be null.')
+                }
+            },
+            checkSpend: function () {
+                this.errors = []
+
+                if (isNaN(this.$refs.spend.value) || parseInt(this.$refs.spend.value) < 0) {
+                    this.errors.push('Spend field must be a positive number')
+                    this.$refs.spend.value = ''
+                }
+            },
             toggleModal() {
                 this.showModal = !this.showModal
             }
@@ -50,8 +73,42 @@
         margin: 0 $size-global;
         border-radius: $border-global;
 
-        .company-form > .company-notes {
-            cursor: pointer;
+        .company-form {
+            padding: 20px 0;
+
+            .company-form-label {
+                color: $ui-gray-darkness;
+                font-weight: bold;
+                padding: 10px 0;
+            }
+
+            .company-form-input {
+                border: 1px solid $ui-gray-dark;
+                border-radius: $border-global;
+                height: 45px;
+                width: 400px;
+                padding: 20px;
+                box-shadow: inset 0 0 1em transparent, 0 0 1em $ui-gray-light;
+
+                &:focus {
+                box-shadow: inset 0 0 1em transparent, 0 0 1em $ui-gray-darkness;
+                transition: 0.8s;
+                }
+
+                &::placeholder {
+                color: $ui-gray-dark;
+                }
+            }
+            
+            .company-notes {
+                cursor: pointer;
+
+                .company-notes-label {
+                    color: $ui-gray-darkness;
+                    font-weight: bold;
+                    padding: 10px 0;
+                }
+            }
         }
     }
 
@@ -71,6 +128,30 @@
         &:hover {
             background: $main-color-purple2;
             transition: 0.4s;
+        }
+    }
+
+    .company-messages {
+        padding: 20px;
+        background: $ui-danger;
+        color: white;
+    }
+
+    textarea {
+        border: 1px solid $ui-gray-dark;
+        border-radius: $border-global;
+        height: 250px;
+        width: 100%;
+        padding: 20px;
+        box-shadow: inset 0 0 1em transparent, 0 0 1em $ui-gray-light;
+
+        &:focus {
+          box-shadow: inset 0 0 1em transparent, 0 0 1em $ui-gray-darkness;
+          transition: 0.8s;
+        }
+
+        &::placeholder {
+          color: $ui-gray-dark;
         }
     }
 </style>

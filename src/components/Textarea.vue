@@ -2,7 +2,7 @@
   div.collection-input
     .collection-label(v-if='label')
       label(:for="name") {{ label }}
-    textarea(:name="name", :placeholder="placeholder")
+    textarea(:name="name", :placeholder="placeholder", v-on:input='onInput')
      | {{ value }}
 </template>
 
@@ -24,6 +24,11 @@
       placeholder: {
         type: String,
         required: false
+      }
+    },
+    methods: {
+      onInput() {
+        return 
       }
     }
   }
