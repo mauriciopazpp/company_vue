@@ -45,8 +45,8 @@
 
     .company-table {
         border: 1px solid $ui-gray-dark;
-        padding: $size-global;
-        margin: 0 $size-global;
+        padding: ($ui-corner*6);
+        margin: 0 ($ui-corner*6);
         border-radius: $border-global;
 
         h2 {
@@ -62,19 +62,23 @@
     }
 
     .company-table-table td, .company-table-table th {
-        border: 1px solid #ddd;
-        padding: 8px;
+        border: 1px solid $ui-gray-light;
+        padding: ($ui-corner*3);
     }
 
-    .company-table-table tr:nth-child(even){background-color: #f2f2f2;}
+    .company-table-table tr:nth-child(even){
+        background-color: $ui-gray-light;
+    }
 
-    .company-table-table tr:hover {background-color: #ddd;}
+    .company-table-table tr:hover {
+        background-color: $ui-gray-light;
+    }
 
     .company-table-table th {
-        padding-top: 12px;
-        padding-bottom: 12px;
+        padding-top: ($ui-corner*4);
+        padding-bottom: ($ui-corner*4);
         text-align: left;
         background-color: $main-color-purple3;
-        color: white;
+        color: $ui-gray-light;
     }
 </style>

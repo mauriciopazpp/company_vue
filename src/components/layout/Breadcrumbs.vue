@@ -1,6 +1,5 @@
 <template lang="pug">
-    section.company
-        | Company page
+    div This is the breadcrumbs
 </template>
 
 <script>

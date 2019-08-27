@@ -27,5 +27,11 @@
             border: 1px solid $ui-gray-dark;
             border-radius: 0 0 $border-global $border-global;
         }
+
+        a {
+            color: $main-color-purple3;
+            font-weight: 900;
+            font-size: 0.9em;
+        }
     }
 </style>

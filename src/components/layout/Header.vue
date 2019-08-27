@@ -51,13 +51,13 @@
 
         .header-search {
             background: $main-color-purple2;
-            margin: $size-global/5;
-            width: $size-global*30;
-            border-radius: $border-global/2;
-            margin-left: $size-global;
-            height: $size-global*2.3;
+            margin: $ui-corner;
+            width: $ui-space-x*30;
+            border-radius: $ui-corner/2;
+            margin-left: $ui-corner*6;
+            height: $ui-space-y*3;
             color: $ui-gray-lighter;
-            padding: $size-global;
+            padding: $ui-corner*6;
 
             &::placeholder {
                 background: image-set(
@@ -65,7 +65,7 @@
                     '~Images/search@2x.png' 2x,
                     '~Images/search@3x.png' 3x) no-repeat left center;
                 color: $ui-gray-lighter;
-                padding: $size-global*1.5;
+                padding: $ui-corner*10;
                 align-items: center;
             }
         }
@@ -76,10 +76,10 @@
 
         .header-button-new {
             background: $main-color-purple3;
-            height: $size-global*2.3;
+            height: $ui-space-y*3;
             color: $ui-gray-lighter;
             border-radius: $border-global/2;
-            padding: 0 ($size-global*1.8);
+            padding: 0 ($ui-corner*8);
             white-space: pre;
 
             &:hover {
@@ -97,7 +97,7 @@
                 display: flex;
 
                 .header-item {
-                    padding: 0 ($size-global);
+                    padding: 0 ($ui-corner*6);
                     align-items: center;
                 }
             }
@@ -113,7 +113,7 @@
                         '~Images/default@2x.png' 2x,
                         '~Images/default@3x.png' 3x) no-repeat left center;
     
-                    padding: $size-global;
+                    padding: $ui-corner*8;
                 }
             }
         }

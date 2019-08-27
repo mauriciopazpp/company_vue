@@ -22,14 +22,14 @@
 
     .modal-mask {
         position: fixed;
-        z-index: 9998;
+        z-index: $z-index-level2;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, .5);
         display: table;
-        transition: opacity .3s ease;
+        transition: opacity 0.3s ease;
     }
 
     .modal-wrapper {
@@ -38,13 +38,13 @@
     }
 
     .modal-container {
-        width: 600px;
-        margin: 0px auto;
-        padding: 20px 30px;
+        width: $ui-space-x*35;
+        margin: 0 auto;
+        padding: ($ui-corner*6) ($ui-corner*8);
         background-color: #fff;
-        border-radius: 2px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-        transition: all .3s ease;
+        border-radius: $ui-corner;
+        box-shadow: 0 $ui-corner ($ui-corner*3) rgba(0, 0, 0, .33);
+        transition: all 0.3s ease;
         font-family: Helvetica, Arial, sans-serif;
     }
 
@@ -54,7 +54,7 @@
     }
 
     .modal-body {
-        margin: 20px 0;
+        margin: ($ui-corner*6) 0;
     }
 
     .modal-default-button {

@@ -14,7 +14,7 @@
             input.company-form-input(ref='spend', name='spend', placeholder='e.g. $150,00', v-on:blur='checkSpend')
             .company-form-label
                 label COMPANY SPEND ABILITY
-            input.company-form-input(ref='spendAbility', name='spendAbility', placeholder='e.g. $150,00 - $330,00', v-on:blur='checkSpendAbility')
+            input.company-form-input(ref='spendAbility', name='spendAbility', placeholder='e.g. 150,00 - 330,00', v-on:blur='checkSpendAbility')
             .company-notes(v-on:click='() => toggleModal()', title='Click to insert a note')
                 .company-notes-label
                     label Notes
@@ -24,7 +24,7 @@
                 .company-body(slot='body')
                     textarea(ref='notes1',  name='notesModal', placeholder='e.g. Good Tech Company',  v-model="notes")
                 .company-footer(slot='footer')
-                    Button.company-footer-button(label='Close', :action='() => toggleModal()')
+                    Button.company-footer-button(label='Save', :action='() => toggleModal()')
 </template>
 
 <script>
@@ -62,7 +62,7 @@
                 this.errors = []
 
                 if (!this.spendAbilityRegex.test(this.$refs.spendAbility.value)) {
-                    this.errors.push('Please, enter valid value e.g. $100-$200')
+                    this.errors.push('Please, enter valid value e.g. 100-200')
                     this.$refs.spendAbility.value = ''
                 }
 
@@ -94,24 +94,24 @@
             .company-form-label {
                 color: $ui-gray-darkness;
                 font-weight: bold;
-                padding: 10px 0;
+                padding: ($ui-corner*3) 0;
             }
 
             .company-form-input {
                 border: 1px solid $ui-gray-dark;
                 border-radius: $border-global;
-                height: 45px;
-                width: 400px;
-                padding: 20px;
+                height: ($ui-space-x*1.8);
+                width: $ui-space-x*17;
+                padding: ($ui-corner*6);
                 box-shadow: inset 0 0 1em transparent, 0 0 1em $ui-gray-light;
 
                 &:focus {
-                box-shadow: inset 0 0 1em transparent, 0 0 1em $ui-gray-darkness;
-                transition: 0.8s;
+                    box-shadow: inset 0 0 1em transparent, 0 0 1em $ui-gray-darkness;
+                    transition: 0.8s;
                 }
 
                 &::placeholder {
-                color: $ui-gray-dark;
+                    color: $ui-gray-dark;
                 }
             }
             
@@ -134,10 +134,10 @@
 
     .company-footer-button {
         background: $main-color-purple3;
-        height: $size-global*2;
+        height: $ui-space-y*3;
         color: $ui-gray-lighter;
         border-radius: $border-global/2;
-        padding: 0 ($size-global*1.8);
+        padding: 0 ($ui-corner*15);
         white-space: pre;
 
         &:hover {

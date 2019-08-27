@@ -13,11 +13,13 @@ $ui-success: #25ab6d;
 $ui-danger: #ce6574;
 $ui-warning: #bf9f56;
 
-/* Fonts */
-$ui-font-level1-title: 8em;
-$ui-font-level2-title: 4em;
-$ui-font-level3-title: 1.7em;
-$ui-font-normal-size: 1em;
-
 $size-global: 20px;
 $border-global: 5px;
+
+/* Globals Exports */
+$ui-corner: 3px;
+$ui-space-x: 25px;
+$ui-space-y: 15px;
+
+$z-index-level1: 0;
+$z-index-level2: 10;

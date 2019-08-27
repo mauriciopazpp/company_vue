@@ -1,6 +1,7 @@
 <template lang="pug">
     .app
         Header
+        Breadcrumbs
         .container
             .section
                 Menu
@@ -11,6 +12,7 @@
 
 <script>
     import Header from "Components/layout/Header.vue"
+    import Breadcrumbs from "Components/layout/Breadcrumbs.vue"
     import Menu from 'Components/layout/Menu.vue'
     import Content from 'Components/layout/Content.vue'
     import Footer from "Components/layout/Footer.vue"
@@ -20,7 +22,8 @@
             Header,
             Menu,
             Content,
-            Footer
+            Footer,
+            Breadcrumbs
         }
     }
 </script>
@@ -31,6 +34,6 @@
     .container {
         display: grid;
         grid-template-columns: 20% 80%;
-        padding: ($size-global*2) ($size-global*5);
+        padding: ($ui-corner*13) ($ui-corner*33);
     }
 </style>
