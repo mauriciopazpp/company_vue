@@ -1,4 +1,4 @@
-import http from "http"
+import axios from "axios"
 
 export const companyList = query =>
-    http.get('https://companies.free.beeceptor.com/companies', query)
+    axios.get('https://testapi.io/api/mpaz-redstage/companies', query)

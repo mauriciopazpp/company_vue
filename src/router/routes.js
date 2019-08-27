@@ -1,5 +1,6 @@
 import CompanyPage from "Pages/companyPage/Index.vue"
 import CompanyData from "Pages/companyData/Index.vue"
+import CompanyTable from "Pages/companyTable/Index.vue"
 
 export default [
     {
@@ -8,9 +9,9 @@ export default [
       component: CompanyData
     },
     {
-      path: "/",
+      path: "/company-table",
       name: "COMPANY TABLE",
-      component: CompanyData
+      component: CompanyTable
     },
     {
       path: "/company-page",

@@ -1,8 +1,8 @@
 
-import moduleCompany from 'Store/modules/company'
+import company from 'Store/modules/company'
 
 export default {
     modules: {
-        moduleCompany,
+        company
     }
 }
