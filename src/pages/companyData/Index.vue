@@ -36,7 +36,7 @@
             errors: [],
             showModal: false,
             notes: '',
-            spendAbilityRegex: /(([$]+\d+\.?)+[-]+([$]+\d+\.?))$$/
+            spendAbilityRegex: /((\d+\.?)+[-]+(\d+\.?))$$/
         }),
         components: {
             Modal,
@@ -62,7 +62,13 @@
                 this.errors = []
 
                 if (!this.spendAbilityRegex.test(this.$refs.spendAbility.value)) {
-                    this.errors.push('Please, enter valid value, e.g. $100-$200')
+                    this.errors.push('Please, enter valid value e.g. $100-$200')
+                    this.$refs.spendAbility.value = ''
+                }
+
+                const values = this.$refs.spendAbility.value.split('-')
+                if (values[0] > values[1]) {
+                    this.errors.push('The first value needs to be bigger then the second value!')
                     this.$refs.spendAbility.value = ''
                 }
             },
