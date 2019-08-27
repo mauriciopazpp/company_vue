@@ -11,10 +11,10 @@
             input.company-form-input(ref='name', name='name', placeholder='e.g. Your Company Name', v-on:blur='checkName')
             .company-form-label
                 label COMPANY SPEND
-            input.company-form-input(ref='spend', name='spend', placeholder='e.g. $150,00', , v-on:blur='checkSpend')
+            input.company-form-input(ref='spend', name='spend', placeholder='e.g. $150,00', v-on:blur='checkSpend')
             .company-form-label
                 label COMPANY SPEND ABILITY
-            input.company-form-input(name='spendAbility', placeholder='e.g. $150,00 - $330,00')
+            input.company-form-input(ref='spendAbility', name='spendAbility', placeholder='e.g. $150,00 - $330,00', v-on:blur='checkSpendAbility')
             .company-notes(v-on:click='() => toggleModal()', title='Click to insert a note')
                 .company-notes-label
                     label Notes
@@ -35,7 +35,8 @@
         data: () => ({
             errors: [],
             showModal: false,
-            notes: ''
+            notes: '',
+            spendAbilityRegex: /(([$]+\d+\.?)+[-]+([$]+\d+\.?))$$/
         }),
         components: {
             Modal,
@@ -55,6 +56,14 @@
                 if (isNaN(this.$refs.spend.value) || parseInt(this.$refs.spend.value) < 0) {
                     this.errors.push('Spend field must be a positive number')
                     this.$refs.spend.value = ''
+                }
+            },
+            checkSpendAbility: function () {
+                this.errors = []
+
+                if (!this.spendAbilityRegex.test(this.$refs.spendAbility.value)) {
+                    this.errors.push('Please, enter valid value, e.g. $100-$200')
+                    this.$refs.spendAbility.value = ''
                 }
             },
             toggleModal() {
